@@ -1,27 +1,44 @@
-# JourneyJournal
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+src/
+|-- app/
+|   |-- core/
+|   |   |-- authentication/        // Modulo per gestire l'autenticazione
+|   |   |   |-- auth.service.ts    // Servizio di autenticazione
+|   |   |   |-- auth.guard.ts      // Guardia di autenticazione
+|   |   |
+|   |   |-- services/              // Servizi condivisi
+|   |   |   |-- user.service.ts    // Servizio per gestire i dati degli utenti
+|   |   |   |-- post.service.ts    // Servizio per gestire i post di viaggio
+|   |   |
+|   |-- features/
+|   |   |-- profile/               // Modulo per il profilo utente
+|   |   |   |-- profile.component.html
+|   |   |   |-- profile.component.ts
+|   |   |   |-- profile.module.ts
+|   |   |
+|   |   |-- experiences/           // Modulo per gestire le esperienze di viaggio
+|   |   |   |-- experience-list/   // Componente per visualizzare elenco esperienze
+|   |   |   |   |-- experience-list.component.html
+|   |   |   |   |-- experience-list.component.ts
+|   |   |   |
+|   |   |   |-- experience-detail/ // Componente per dettagli esperienza
+|   |   |   |   |-- experience-detail.component.html
+|   |   |   |   |-- experience-detail.component.ts
+|   |   |   |
+|   |   |   |-- experiences.module.ts
+|   |   |
+|   |   |-- shared/                // Componenti e servizi condivisi
+|   |       |-- header/            // Componente per l'intestazione
+|   |       |   |-- header.component.html
+|   |       |   |-- header.component.ts
+|   |       |
+|   |       |-- footer/            // Componente per il piè di pagina
+|   |           |-- footer.component.html
+|   |           |-- footer.component.ts
+|   |
+|   |-- app.component.html         // Template principale dell'app
+|   |-- app.component.ts           // Componente principale dell'app
+|   |-- app.module.ts              // Modulo principale dell'app
+|   |-- app-routing.module.ts      // Modulo di routing dell'app
+|
+|-- assets/
+    |-- images/                    // Risorse multimediali (foto, icone, ecc.)
