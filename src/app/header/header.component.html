@@ -1,0 +1,21 @@
+<!-- Importa i componenti PrimeNG necessari -->
+<div class="d-flex justify-content-between">
+  <!-- Logo -->
+  <img
+    src="assets/logo.png"
+    alt="Logo"
+    style="height: 40px; margin-right: 10px"
+  />
+
+  <!-- Link sulla sinistra -->
+  <a routerLink="/" class="header-link">Home</a>
+
+  <!-- Bottone sulla destra -->
+  <button
+    pButton
+    type="button"
+    label="Login"
+    class="p-button-secondary"
+    (click)="login()"
+  ></button>
+</div>
