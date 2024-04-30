@@ -1,21 +1,26 @@
-<!-- Importa i componenti PrimeNG necessari -->
-<div class="d-flex justify-content-between">
-  <!-- Logo -->
-  <img
-    src="assets/logo.png"
-    alt="Logo"
-    style="height: 40px; margin-right: 10px"
-  />
-
-  <!-- Link sulla sinistra -->
-  <a routerLink="/" class="header-link">Home</a>
-
-  <!-- Bottone sulla destra -->
-  <button
-    pButton
-    type="button"
-    label="Login"
-    class="p-button-secondary"
-    (click)="login()"
-  ></button>
-</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Journey Journal</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"
+            >Random Travel</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary mx-2">login</button>
+</nav>
