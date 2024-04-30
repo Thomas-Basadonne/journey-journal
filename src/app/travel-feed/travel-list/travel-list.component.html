@@ -1,0 +1,12 @@
+<div class="container px-4 text-center">
+  <div class="row gx-5">
+    <div class="col">
+      <!-- <div class="p-3"><app-travel-item></app-travel-item></div> -->
+      <app-travel-item
+        *ngFor="let travelEl of travels"
+        [travel]="travelEl"
+        (travelSelected)="onTravelSelected(travelEl)"
+      ></app-travel-item>
+    </div>
+  </div>
+</div>
