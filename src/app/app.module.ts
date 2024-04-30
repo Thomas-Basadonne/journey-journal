@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { TravelDetailComponent } from './travel-feed/travel-detail/travel-detail
 import { TravelItemComponent } from './travel-feed/travel-list/travel-item/travel-item.component';
 import { TravelService } from './travel-feed/travel.service';
 import { TruncatePipe } from './shared/truncate.pipe';
+import { UserTravelListComponent } from './user-dashboard/user-travel-list/user-travel-list.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +29,14 @@ import { TruncatePipe } from './shared/truncate.pipe';
     TravelDetailComponent,
     TravelItemComponent,
     TruncatePipe,
+    UserTravelListComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+  ],
   providers: [TravelService],
   bootstrap: [AppComponent],
 })
