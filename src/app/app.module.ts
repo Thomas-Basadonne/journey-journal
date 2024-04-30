@@ -9,6 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './auth/auth.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { TravelFeedComponent } from './travel-feed/travel-feed.component';
+import { TravelListComponent } from './travel-feed/travel-list/travel-list.component';
+import { TravelDetailComponent } from './travel-feed/travel-detail/travel-detail.component';
+import { TravelItemComponent } from './travel-feed/travel-list/travel-item/travel-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { TravelFeedComponent } from './travel-feed/travel-feed.component';
     AuthComponent,
     UserDashboardComponent,
     TravelFeedComponent,
+    TravelListComponent,
+    TravelDetailComponent,
+    TravelItemComponent,
   ],
   imports: [
     BrowserModule,
