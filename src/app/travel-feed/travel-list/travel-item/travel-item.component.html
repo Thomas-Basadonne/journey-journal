@@ -7,7 +7,7 @@
   <div class="card-body">
     <h5 class="card-title">{{ travel.place }}</h5>
     <p class="card-text">
-      {{ travel.description }}
+      {{ travel.description | truncate : 30 }}
     </p>
   </div>
   <ul class="list-group list-group-flush">
@@ -23,13 +23,12 @@
     </li>
   </ul>
   <div class="card-body">
-    <!-- <button
+    <button
       type="button"
       class="btn btn-info text-white"
-      routerLink="/travel-detail"
-      (click)="onSelected()"
+      [routerLink]="['/travel-detail', travel.id]"
     >
       Info
-    </button> -->
+    </button>
   </div>
 </div>
