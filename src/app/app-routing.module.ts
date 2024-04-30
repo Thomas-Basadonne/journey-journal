@@ -8,7 +8,7 @@ import { TravelDetailComponent } from './travel-feed/travel-detail/travel-detail
 const routes: Routes = [
   { path: '', redirectTo: '/travel-feed', pathMatch: 'full' },
   { path: 'travel-feed', component: TravelFeedComponent },
-  { path: 'travel-detail', component: TravelDetailComponent },
+  { path: 'travel-detail/:id', component: TravelDetailComponent },
   { path: 'dashboard', component: UserDashboardComponent },
 ];
 

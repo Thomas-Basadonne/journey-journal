@@ -13,6 +13,7 @@ import { TravelListComponent } from './travel-feed/travel-list/travel-list.compo
 import { TravelDetailComponent } from './travel-feed/travel-detail/travel-detail.component';
 import { TravelItemComponent } from './travel-feed/travel-list/travel-item/travel-item.component';
 import { TravelService } from './travel-feed/travel.service';
+import { TruncatePipe } from './shared/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TravelService } from './travel-feed/travel.service';
     TravelListComponent,
     TravelDetailComponent,
     TravelItemComponent,
+    TruncatePipe,
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [TravelService],

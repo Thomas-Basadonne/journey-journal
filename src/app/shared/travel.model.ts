@@ -1,4 +1,5 @@
 export class Travel {
+  public id: number;
   public place: string;
   public duration: number;
   public imagePath: string;
@@ -8,6 +9,7 @@ export class Travel {
   public description: string;
 
   constructor(
+    id: number,
     place: string,
     duration: number,
     imagePath: string,
@@ -16,6 +18,7 @@ export class Travel {
     traveler: string,
     description: string
   ) {
+    this.id = id;
     this.place = place;
     this.duration = duration;
     this.imagePath = imagePath;

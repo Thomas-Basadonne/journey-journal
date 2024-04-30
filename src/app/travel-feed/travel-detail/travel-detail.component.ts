@@ -10,5 +10,17 @@ import { TravelService } from '../travel.service';
 })
 export class TravelDetailComponent implements OnInit {
   travel: Travel;
-  ngOnInit(): void {}
+
+  constructor(
+    private route: ActivatedRoute,
+    private travelService: TravelService
+  ) {}
+
+  ngOnInit(): void {
+    // Recupera il parametro 'id' dall'URL
+    this.route.params.subscribe((params: Params) => {
+      const travelId = +params['id']; // Converte l'ID da stringa a numero
+      this.travel = this.travelService.getTravelById(travelId);
+    });
+  }
 }

@@ -6,6 +6,7 @@ export class TravelService {
 
   travels: Travel[] = [
     new Travel(
+      0,
       'Paris, France',
       7,
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tour_Eiffel_7.jpg/220px-Tour_Eiffel_7.jpg',
@@ -15,6 +16,7 @@ export class TravelService {
       'Exciting trip to explore the beautiful city of Paris!'
     ),
     new Travel(
+      1,
       'Tokyo, Japan',
       10,
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tour_Eiffel_7.jpg/220px-Tour_Eiffel_7.jpg',
@@ -24,6 +26,11 @@ export class TravelService {
       'Unforgettable journey to experience the vibrant culture of Tokyo.'
     ),
   ];
+
+  // Funzione per ottenere un viaggio in base all'ID
+  getTravelById(index: number): Travel {
+    return this.travels.find((travel) => travel.id === index);
+  }
 
   getTravels(): Travel[] {
     return this.travels.slice();
