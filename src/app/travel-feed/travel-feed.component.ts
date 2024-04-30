@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TravelService } from './travel.service';
+import { Travel } from '../shared/travel.model';
 
 @Component({
   selector: 'app-travel-feed',
   templateUrl: './travel-feed.component.html',
-  styleUrl: './travel-feed.component.css'
+  styleUrl: './travel-feed.component.css',
 })
-export class TravelFeedComponent {
+export class TravelFeedComponent implements OnInit {
+  selectedTravel: Travel;
 
+  constructor(private travelService: TravelService) {}
+
+  ngOnInit(): void {
+    this.travelService.travelSelected.subscribe(
+      (travel: Travel) => (this.selectedTravel = travel)
+    );
+  }
 }

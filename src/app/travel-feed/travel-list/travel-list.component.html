@@ -5,7 +5,7 @@
       <app-travel-item
         *ngFor="let travelEl of travels"
         [travel]="travelEl"
-        (travelSelected)="onTravelSelected(travelEl)"
+        [index]="i"
       ></app-travel-item>
     </div>
   </div>

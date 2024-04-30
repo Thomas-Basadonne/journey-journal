@@ -12,6 +12,7 @@ import { TravelFeedComponent } from './travel-feed/travel-feed.component';
 import { TravelListComponent } from './travel-feed/travel-list/travel-list.component';
 import { TravelDetailComponent } from './travel-feed/travel-detail/travel-detail.component';
 import { TravelItemComponent } from './travel-feed/travel-list/travel-item/travel-item.component';
+import { TravelService } from './travel-feed/travel.service';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,8 @@ import { TravelItemComponent } from './travel-feed/travel-list/travel-item/trave
     TravelDetailComponent,
     TravelItemComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-  ],
-  providers: [],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
+  providers: [TravelService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

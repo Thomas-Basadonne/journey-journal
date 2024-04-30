@@ -1,35 +1,19 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Travel } from '../../shared/travel.model';
+import { TravelService } from '../travel.service';
 
 @Component({
   selector: 'app-travel-list',
   templateUrl: './travel-list.component.html',
   styleUrl: './travel-list.component.css',
 })
-export class TravelListComponent {
-  @Output() travelWasSelected = new EventEmitter<Travel>();
-  travels: Travel[] = [
-    new Travel(
-      'Paris, France',
-      7,
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tour_Eiffel_7.jpg/220px-Tour_Eiffel_7.jpg',
-      new Date('2024-05-15'),
-      new Date('2024-05-22'),
-      'John Doe',
-      'Exciting trip to explore the beautiful city of Paris!'
-    ),
-    new Travel(
-      'Tokyo, Japan',
-      10,
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tour_Eiffel_7.jpg/220px-Tour_Eiffel_7.jpg',
-      new Date('2024-06-10'),
-      new Date('2024-06-20'),
-      'Jane Smith',
-      'Unforgettable journey to experience the vibrant culture of Tokyo.'
-    ),
-  ];
+export class TravelListComponent implements OnInit {
+  travels: Travel[];
 
-  onTravelSelected(travel: Travel) {
-    this.travelWasSelected.emit(travel);
+  constructor(private travelService: TravelService) {}
+
+  ngOnInit(): void {
+    this.travels = this.travelService.getTravels();
   }
+
 }

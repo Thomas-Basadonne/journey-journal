@@ -1,1 +1,7 @@
 <p>travel-detail works!</p>
+{{ travel.place }}
+
+<ng-container *ngIf="travel; else elseTemplate">
+  {{ travel.place }}
+</ng-container>
+<ng-template #elseTemplate> non va </ng-template>
