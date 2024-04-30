@@ -1,7 +1,15 @@
-<p>travel-detail works!</p>
-{{ travel.place }}
-
-<ng-container *ngIf="travel; else elseTemplate">
-  {{ travel.place }}
-</ng-container>
-<ng-template #elseTemplate> non va </ng-template>
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+  <div class="container-fluid py-5">
+    <img [src]="travel.imagePath" alt="" class="img-fluid" />
+    <h1 class="display-5 fw-bold">Viaggio a {{ travel.place }}</h1>
+    <p class="col-md-8 fs-4">
+      {{ travel.description }}
+    </p>
+    <p>
+      Il viaggio è durato {{ travel.duration }} giorni! <br />
+      L'utente {{ travel.traveler }} è partito il
+      {{ travel.startDate | date : "dd/MM/yyyy" }} ed è tornato dalla sua
+      avventura il {{ travel.endDate | date : "dd/MM/yyyy" }}
+    </p>
+  </div>
+</div>

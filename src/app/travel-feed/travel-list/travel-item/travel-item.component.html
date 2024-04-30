@@ -11,16 +11,8 @@
     </p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{ travel.duration }} giorni</li>
-    <li class="list-group-item">
-      {{ travel.startDate | date : "mediumDate" }}
-    </li>
-    <li class="list-group-item">
-      {{ travel.endDate | date : "mediumDate" }}
-    </li>
-    <li class="list-group-item">
-      {{ travel.traveler }}
-    </li>
+    <li class="list-group-item">{{ travel.duration }} giorni di viaggio</li>
+    <li class="list-group-item">Viaggiatore: {{ travel.traveler }}</li>
   </ul>
   <div class="card-body">
     <button
@@ -28,7 +20,7 @@
       class="btn btn-info text-white"
       [routerLink]="['/travel-detail', travel.id]"
     >
-      Info
+      Scopri di più
     </button>
   </div>
 </div>
