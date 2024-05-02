@@ -43,6 +43,7 @@
     class="btn btn-danger mx-2"
     routerLink="/auth"
     *ngIf="isAuth"
+    (click)="onLogout()"
   >
     Logout
   </button>
