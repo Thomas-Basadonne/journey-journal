@@ -10,6 +10,7 @@ import { DataStorageService } from '../../shared/data-storage.service';
 })
 export class TravelListComponent implements OnInit {
   travels: Travel[];
+  isLoading = false;
 
   constructor(
     private travelService: TravelService,
@@ -20,22 +21,25 @@ export class TravelListComponent implements OnInit {
     this.fetchTravels(); // Carica i viaggi all'inizio
   }
 
-  onSaveData() {
-    this.dataStorageService.storeTravels();
-  }
+
 
   onRefreshData() {
     this.fetchTravels(); // Richiedi i viaggi nuovamente quando viene premuto il pulsante "aggiorna feed"
   }
 
   private fetchTravels() {
+    this.isLoading = true;
     this.dataStorageService.fetchTravels().subscribe(
       (travels: Travel[]) => {
-        this.travelService.setTravels(travels); // Aggiorna i viaggi nel TravelService
-        this.travels = this.travelService.getTravels(); // Ottieni i viaggi aggiornati
+        // Aggiorna i viaggi nel TravelService
+        this.travelService.setTravels(travels);
+        // Ottieni i viaggi aggiornati
+        this.travels = this.travelService.getTravels();
+        this.isLoading = false;
       },
       (error) => {
         console.log('Errore durante il recupero dei viaggi:', error);
+        this.isLoading = false; // Assicurati che isLoading venga impostato su false anche in caso di errore
       }
     );
   }

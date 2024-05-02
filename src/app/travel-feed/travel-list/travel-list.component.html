@@ -1,8 +1,10 @@
 <div class="container-fluid">
-  <button class="btn btn-primary" (click)="onSaveData()">salva i dati</button>
-  <button class="btn btn-primary" (click)="onRefreshData()">aggiorna feed</button>
+  <button class="btn btn-primary" (click)="onRefreshData()">
+    aggiorna feed
+  </button>
   <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let travelEl of travels">
+      <app-spinner *ngIf="isLoading"></app-spinner>
       <div class="p-4">
         <app-travel-item [travel]="travelEl"></app-travel-item>
       </div>

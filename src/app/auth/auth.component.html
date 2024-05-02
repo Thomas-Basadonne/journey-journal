@@ -1,1 +1,44 @@
-<p>auth works!</p>
+<div class="container">
+  <div class="alert alert-danger" *ngIf="error">
+    {{ error }}
+  </div>
+  <div *ngIf="isLoading" class="text-center">
+    <app-spinner></app-spinner>
+  </div>
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+        ngModel
+        name="email"
+        required
+        email
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        ngModel
+        name="password"
+        required
+        minlength="6"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid">
+      {{ isLoginMode ? "Accedi" : "Iscriviti" }}
+    </button>
+    <button type="button" class="btn btn-success ms-2" (click)="onSwitchMode()">
+      {{ isLoginMode ? "Iscriviti" : "Accedi" }}
+    </button>
+  </form>
+</div>
