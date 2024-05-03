@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h2>Create a New Travel</h2>
+    <form (ngSubmit)="onSubmit()" #travelForm="ngForm">
+      <div class="mb-3">
+        <label for="place" class="form-label">Place</label>
+        <input type="text" class="form-control" id="place" name="place" [(ngModel)]="travel.place" required>
+      </div>
+      <div class="mb-3">
+        <label for="duration" class="form-label">Duration (days)</label>
+        <input type="number" class="form-control" id="duration" name="duration" [(ngModel)]="travel.duration" required>
+      </div>
+      <div class="mb-3">
+        <label for="imagePath" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="imagePath" name="imagePath" [(ngModel)]="travel.imagePath" required>
+      </div>
+      <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date</label>
+        <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="travel.startDate" required>
+      </div>
+      <div class="mb-3">
+        <label for="endDate" class="form-label">End Date</label>
+        <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="travel.endDate" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="travel.description" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
