@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TravelService } from './travel.service';
+import { TravelService } from '../shared/travel.service';
 import { Travel } from '../shared/travel.model';
 
 @Component({

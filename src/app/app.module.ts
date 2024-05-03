@@ -13,11 +13,13 @@ import { TravelFeedComponent } from './travel-feed/travel-feed.component';
 import { TravelListComponent } from './travel-feed/travel-list/travel-list.component';
 import { TravelDetailComponent } from './travel-feed/travel-detail/travel-detail.component';
 import { TravelItemComponent } from './travel-feed/travel-list/travel-item/travel-item.component';
-import { TravelService } from './travel-feed/travel.service';
+import { TravelService } from './shared/travel.service';
 import { TruncatePipe } from './shared/truncate.pipe';
 import { UserTravelListComponent } from './user-dashboard/user-travel-list/user-travel-list.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AuthComponent } from './auth/auth.component';
+import { MyTravelItemComponent } from './user-dashboard/user-travel-list/my-travel-item/my-travel-item.component';
+import { TravelFormComponent } from './user-dashboard/user-travel-list/travel-form/travel-form.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { AuthComponent } from './auth/auth.component';
     TruncatePipe,
     UserTravelListComponent,
     SpinnerComponent,
+    MyTravelItemComponent,
+    TravelFormComponent,
   ],
   imports: [
     BrowserModule,

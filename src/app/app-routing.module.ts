@@ -11,12 +11,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/travel-feed', pathMatch: 'full' },
   { path: 'travel-feed', component: TravelFeedComponent },
   { path: 'travel-detail/:id', component: TravelDetailComponent },
+  { path: 'auth', component: AuthComponent },
   {
     path: 'dashboard',
     component: UserDashboardComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({

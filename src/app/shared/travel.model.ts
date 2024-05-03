@@ -6,6 +6,7 @@ export class Travel {
   public startDate: Date;
   public endDate: Date;
   public traveler: string;
+  public travelerId: string;
   public description: string;
 
   constructor(
@@ -16,6 +17,7 @@ export class Travel {
     startDate: Date,
     endDate: Date,
     traveler: string,
+    travelerId: string,
     description: string
   ) {
     this.id = id;
@@ -25,6 +27,7 @@ export class Travel {
     this.startDate = startDate;
     this.endDate = endDate;
     this.traveler = traveler;
+    this.travelerId = travelerId;
     this.description = description;
   }
 }

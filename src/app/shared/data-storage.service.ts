@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TravelService } from '../travel-feed/travel.service';
+import { TravelService } from './travel.service';
 import { Travel } from './travel.model';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, exhaustMap, take } from 'rxjs/operators';
@@ -56,6 +56,21 @@ export class DataStorageService {
         }
       );
   }
+
+  // storeTravels(travels: Travel[]) {
+  //   this.authService.user.subscribe((user) => {
+  //     if (user && user.token) {
+  //       this.http
+  //         .put(
+  //           `https://journey-journal-34a78-default-rtdb.europe-west1.firebasedatabase.app/travels.json?auth=${user.token}`,
+  //           travels
+  //         )
+  //         .subscribe((response) => {
+  //           console.log('Viaggio salvato con successo:', response);
+  //         });
+  //     }
+  //   });
+  // }
 
   fetchTravels(): Observable<Travel[]> {
     return this.authService.user.pipe(

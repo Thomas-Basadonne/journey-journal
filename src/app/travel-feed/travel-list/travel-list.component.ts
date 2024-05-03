@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Travel } from '../../shared/travel.model';
-import { TravelService } from '../travel.service';
+import { TravelService } from '../../shared/travel.service';
 import { DataStorageService } from '../../shared/data-storage.service';
 
 @Component({
@@ -20,8 +20,6 @@ export class TravelListComponent implements OnInit {
   ngOnInit(): void {
     this.fetchTravels(); // Carica i viaggi all'inizio
   }
-
-
 
   onRefreshData() {
     this.fetchTravels(); // Richiedi i viaggi nuovamente quando viene premuto il pulsante "aggiorna feed"

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Travel } from '../../shared/travel.model';
-import { TravelService } from '../travel.service';
+import { TravelService } from '../../shared/travel.service';
 
 @Component({
   selector: 'app-travel-detail',
